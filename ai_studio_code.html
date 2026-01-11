@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>إشعار تأكيد البيانات - مؤسسة XX</title>
+    <style>
+        /* إعدادات الخلفية الرمادية التقنية */
+        body {
+            margin: 0; padding: 0;
+            background-color: #e6e9ef;
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* الحاوية الرئيسية الأبيض المورفيك */
+        .main-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 40px;
+            box-shadow: 25px 25px 50px #bebebe, -25px -25px 50px #ffffff;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+
+        /* الهيدر واللوجو */
+        .header-brand {
+            background-color: #9a2020;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #660000;
+        }
+        .header-logo {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        .content-body { padding: 40px; }
+        .main-title { color: #1a202c; font-size: 22px; font-weight: 900; margin-bottom: 20px; }
+
+        /* صندوق البيانات Techno-Morphic */
+        .data-card {
+            background: #f0f2f5;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 10px 0;
+            box-shadow: inset 6px 6px 12px #d1d9e6, inset -6px -6px 12px #ffffff;
+            border: 1px solid rgba(139, 0, 0, 0.1);
+        }
+        .data-row {
+            padding: 10px 0;
+            border-bottom: 1px dashed #d1d9e6;
+            display: block;
+        }
+        .data-row:last-child { border-bottom: none; }
+        .label {
+            font-family: 'Tajawal', sans-serif;
+            color: #9a2020;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            width: 100px;
+        }
+        .value { color: #2d3748; font-weight: bold; font-size: 14px; }
+
+        /* تنبيه الفرع */
+        .alert-branch {
+            background: #fdf2f2;
+            border-right: 5px solid #9a2020;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        /* الخريطة المتجاوبة */
+        .map-box {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* شبكة الشركاء (10 شركات) */
+        .partners-section {
+            background: #f8fafc;
+            padding: 35px 20px;
+            text-align: center;
+            border-top: 1px solid #edf2f7;
+        }
+        .partner-item {
+            display: inline-block;
+            width: 80px; /* حجم موحد لشعارات الشركاء */
+            margin: 10px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+        }
+
+        /* السوشيال ميديا والسلوجان */
+        .footer-social {
+            padding: 40px 20px;
+            text-align: center;
+            background: #ffffff;
+        }
+        .social-link {
+            width: 25px; /* حجم موحد لأيقونات السوشيال */
+            height: 25px;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .slogan {
+            color: #9a2020;
+            font-weight: bold;
+            font-size: 22px;
+            font-family: 'Tajawal', sans-serif;
+            margin-bottom: 25px;
+        }
+
+        /* التوافق مع الجوال */
+        /* قواعد عامة متوافقة مع معظم عملاء البريد */
+        img { max-width: 100%; height: auto; display: block; border: 0; -ms-interpolation-mode: bicubic; }
+        table { border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        a { color: inherit; text-decoration: none; }
+        .header-logo { max-width: 200px; width: 100%; height: auto; }
+        .map-box iframe { width: 100% !important; height: 300px; border: 0; }
+
+        /* استجابة عامة */
+        @media only screen and (max-width: 800px) {
+            .main-container { margin: 20px 16px !important; width: auto !important; box-shadow: 15px 15px 30px rgba(190,190,190,0.5); }
+            .content-body { padding: 28px !important; }
+            .header-brand { padding: 30px 16px !important; }
+            .header-logo { max-width: 160px; margin: 0 auto; }
+            .data-card { padding: 20px !important; border-radius: 16px; }
+            .data-row { padding: 8px 0; }
+            .label { display: inline-block; width: 110px; vertical-align: top; }
+            .value { display: inline-block; max-width: calc(100% - 120px); }
+            .partners-section { padding: 28px 12px !important; }
+            .partner-item { width: 72px; margin: 8px; }
+            .footer-social { padding: 28px 12px !important; }
+            .slogan img { width: 70%; height: auto; }
+        }
+
+        /* ضبط للقاطنين على شاشات صغيرة (هواتف) */
+        @media only screen and (max-width: 480px) {
+            .main-container { margin: 12px !important; border-radius: 14px !important; }
+            .header-brand { padding: 20px 12px !important; border-bottom-width: 4px; }
+            .content-body { padding: 18px !important; }
+            .main-title { font-size: 18px !important; }
+            .data-card { padding: 14px !important; }
+            .label { display: block !important; width: 100% !important; margin-bottom: 6px; font-size: 13px; }
+            .value { display: block !important; width: 100% !important; font-size: 14px; }
+            .map-box iframe { height: 200px !important; }
+            .partner-item { width: 56px !important; margin: 6px !important; filter: none; opacity: 0.85; }
+            .social-link img { width: 20px; height: 20px; }
+            .footer-social { padding: 18px 12px !important; }
+            .slogan { font-size: 18px; }
+        }
+
+        /* تحسينات لأوتلوك (نقطة مرجعية) */
+        @media all {
+            .main-container, .content-body, .header-brand { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center" style="padding: 20px 0;">
+                
+                <div class="main-container">
+                    <!-- الهيدر مع اللوجو -->
+                    <div class="header-brand">
+                        <center>
+                            <img src="https://github.com/AnasAdda/Email-Templates/blob/main/LOGOs/latilogo.png?raw=true" alt="Logo XX" class="header-logo">
+                        </center>
+                        
+                    </div>
+
+                    <!-- المحتوى الرئيسي -->
+                    <div class="content-body">
+                        <div class="main-title">تأكيد استلام الطلب الرقمي</div>
+                        
+                        <!-- صندوق البيانات Techno-Morphic -->
+                        <div class="data-card">
+                            <div class="data-row">
+                                <span class="label">السيد : </span>
+                                <span class="value"></span>XXXX</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="label">اسم البرنامج:</span>
+                                <span class="value"></span>XXXX</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="label">تاريخ البدء:</span>
+                                <span class="value"></span>XXXX</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="label">مكان التدريب:</span>
+                                <span class="value"></span>XXXX</span>
+                            </div>
+                        </div>
+
+
+                        <!-- تنبيه الفرع -->
+                        <div class="alert-branch">
+                        <p style="color: #4a5568; line-height: 1.8;">
+تم استلام طلب تسجيلك بنجاح، ونودّ التنويه إلى أن هذا التسجيل يُعد مبدئيًا، ويستلزم تأكيد الحجز النهائي مراجعة الفرع المذكور أدناه لإتمام عملية السداد.                        
+                        </p>
+                        </div>
+
+                        <!-- الخريطة -->
+                        <div class="map-box">
+                            <a href="https://maps.app.goo.gl/QJL5no7Y8G6Wq1NWA" target="_blank">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2264.893939763766!2d15.08898715148819!3d32.37151358219061!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13a14d6f8370c7a1%3A0x37871fad265323fd!2sLibyan%20Academy%20for%20Telecom%20and%20Informatics!5e1!3m2!1sar!2sus!4v1766488105076!5m2!1sar!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- شبكة الشركاء (10 شركات بنفس الحجم) -->
+                    <div class="partners-section">
+                        <div style="font-size: 11px; color: #9a2020; margin-bottom: 20px; font-weight: bold; letter-spacing: 1px;"><h2>الأكاديمية الليبية للاتصالات والمعلوماتية شريك معتمد</h2></div>
+                        
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner1" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner2" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner3" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner4" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner5" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner6" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner7" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner8" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner9" width="100%"></div>
+                        <div class="partner-item"><img src="https://via.placeholder.com/100x50?text=Partner10" width="100%"></div>
+                    </div>
+
+                    <!-- السلوجان والسوشيال ميديا -->
+                    <div class="footer-social">
+                        <center>
+                            <div class="slogan"><img src="https://github.com/AnasAdda/Email-Templates/blob/main/LOGOs/TEXT.png?raw=true" width="70%"></div>
+                        </center>
+                        
+                        
+                        <!-- أيقونات السوشيال ميديا (باللون الأحمر الداكن عبر فلتر) -->
+                        <a href="#" style="display:inline-block; margin:0 8px; border-radius:10px; background: linear-gradient(145deg,#f7f9fc,#eef2f6); padding:8px; box-shadow: 8px 8px 16px rgba(0,0,0,0.08), -8px -8px 16px #ffffff, inset 4px 4px 12px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.7); border:1px solid rgba(0, 0, 0, 0.14);">
+                            <img src="https://api.iconify.design/mdi:facebook.svg?color=%239a2020" width="22" height="22" alt="facebook" style="display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.20));">
+                        </a>
+
+                        <a href="#" style="display:inline-block; margin:0 8px; border-radius:10px; background: linear-gradient(145deg,#f7f9fc,#eef2f6); padding:8px; box-shadow: 8px 8px 16px rgba(0,0,0,0.08), -8px -8px 16px #ffffff, inset 4px 4px 12px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.7); border:1px solid rgba(0, 0, 0, 0.14);">
+                            <img src="https://api.iconify.design/ri:instagram-fill.svg?color=%239a2020" width="22" height="22" alt="instagram" style="display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.20));">
+                        </a>
+
+                        <a href="#" style="display:inline-block; margin:0 8px; border-radius:10px; background: linear-gradient(145deg,#f7f9fc,#eef2f6); padding:8px; box-shadow: 8px 8px 16px rgba(0,0,0,0.08), -8px -8px 16px #ffffff, inset 4px 4px 12px rgba(0, 0, 0, 0.06), inset -4px -4px 8px rgba(255,255,255,0.7); border:1px solid rgba(0, 0, 0, 0.14);">
+                            <img src="https://api.iconify.design/mage:linkedin.svg?color=%239a2020" width="22" height="22" alt="linkedin" style="display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.20));">
+                        </a>
+
+                        <a href="#" style="display:inline-block; margin:0 8px; border-radius:10px; background: linear-gradient(145deg,#f7f9fc,#eef2f6); padding:8px; box-shadow: 8px 8px 16px rgba(0,0,0,0.08), -8px -8px 16px #ffffff, inset 4px 4px 12px rgba(0, 0, 0, 0.06), inset -4px -4px 8px rgba(255,255,255,0.7); border:1px solid rgba(0,0,0,0.14);">
+                            <img src="https://api.iconify.design/dashicons:whatsapp.svg?color=%239a2020" width="22" height="22" alt="whatsapp" style="display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.20));">
+                        </a>
+
+                        <a href="#" style="display:inline-block; margin:0 8px; border-radius:10px; background: linear-gradient(145deg,#f7f9fc,#eef2f6); padding:8px; box-shadow: 8px 8px 16px rgba(0,0,0,0.08), -8px -8px 16px #ffffff, inset 4px 4px 12px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.7); border:1px solid rgba(0, 0, 0, 0.14);">
+                            <img src="https://api.iconify.design/akar-icons:telegram-fill.svg?color=%239a2020" width="22" height="22" alt="telegram" style="display:block; filter:drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));">
+                        </a>
+
+                        <a href="#" style="display:inline-block; margin:0 8px; border-radius:10px; background: linear-gradient(145deg,#f7f9fc,#eef2f6); padding:8px; box-shadow: 8px 8px 16px rgba(0,0,0,0.08), -8px -8px 16px #ffffff, inset 4px 4px 12px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.7); border:1px solid rgba(0,0,0,0.14);">
+                            <img src="https://api.iconify.design/streamline-plump:web-solid.svg?color=%239a2020" width="22" height="22" alt="website" style="display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.20));">
+                        </a>
+                    </div>
+
+                    <!-- الفوتر الحقوقي -->
+                    <div style="background: #f1f5f9; padding: 15px; text-align: center; font-size: 10px; color: #94a3b8;">
+                        هذا الإيميل مرسل آلياً بواسطة الأكاديمية الليبية للإتصالات والمعلوماتية <br>
+                        جميع الحقوق محفوظة © 2026 
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
